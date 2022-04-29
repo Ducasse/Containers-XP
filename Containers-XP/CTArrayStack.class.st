@@ -1,17 +1,19 @@
 "
 Started to implement ArrayStack from this book https://opendatastructures.org/
-
 But the first datastructure feels strange and it gave a strange view on the rest of the book. 
+The book defines the state of ArrayStack as an array and a number representing the number of elements.
 
 ```
 T[] a;
- int n;
+int n; 
 ```
 
 ```
 int size() {
-return n; }
+   return n; }
 ```
+For example add is defined as follows:
+
 ```
 void add(int i, T x) {
    if (n + 1 > a.length) resize();
@@ -22,6 +24,7 @@ void add(int i, T x) {
 }
 ```
 
+Set is defined as follows: 
 ```
  T set(int i, T x) {
    T y = a[i];
@@ -29,15 +32,13 @@ void add(int i, T x) {
    return y;
 }
 ```
-I started the book and the first datastructure feels strange and it gave a strange view on the rest of the book. 
-```
 
+ 
+To me these definition are bogus. 
 Indeed 
 - first `set` does not update the number of elements, so using set break the invariant that n is the number of elements stored. 
-
-- second set should not return the previous value because it propagates null value
-
-- third why set and get are needed (I renamed them at: at:put:) but they are not needed. 
+- second `set` should not return the previous value because it propagates null value
+- third why `set` and `get` are needed (I renamed them as at: at:put:) but they are not needed in a Stack API. 
 
 "
 Class {
