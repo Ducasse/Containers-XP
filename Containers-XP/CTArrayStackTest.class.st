@@ -5,15 +5,6 @@ Class {
 }
 
 { #category : #tests }
-CTArrayStackTest >> testAtPutWithinInternalSize [
-
-	| as |
-	as := CTArrayStack new.
-	as at: 2 put: 'a'.
-	self assert: (as at: 2) equals: 'a'  
-]
-
-{ #category : #tests }
 CTArrayStackTest >> testCapacity [
 
 	| as |
